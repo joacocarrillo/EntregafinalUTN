@@ -1,0 +1,59 @@
+/* Estilos generales del formulario */
+.login-container {
+    max-width: 400px; /* Ancho máximo del formulario */
+    margin: 20px auto; /* Centrado en la página */
+    padding: 20px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde del formulario */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para profundidad */
+    background-color: #fff; /* Color de fondo */
+  }
+  
+  /* Estilo del título del formulario */
+  .login-container h1 {
+    text-align: center; /* Centrar el texto */
+    color: #333; /* Color del texto */
+  }
+  
+  /* Estilo de los campos de entrada */
+  .login-container input[type="email"],
+  .login-container input[type="password"] {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espaciado interno */
+    margin: 10px 0; /* Margen superior e inferior */
+    border: 1px solid #ccc; /* Borde */
+    border-radius: 4px; /* Bordes redondeados */
+    box-sizing: border-box; /* Incluir padding en el ancho total */
+  }
+  
+  /* Estilo de las etiquetas */
+  .login-container label {
+    margin-top: 10px; /* Espaciado superior */
+    display: block; /* Para que ocupe toda la línea */
+    color: #555; /* Color del texto */
+  }
+  
+  /* Estilo del botón */
+  .login-container button {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espaciado interno */
+    background-color: #007bff; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar cursor al pasar sobre el botón */
+    font-size: 16px; /* Tamaño de la fuente */
+  }
+  
+  /* Efecto hover para el botón */
+  .login-container button:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el mouse */
+  }
+  
+  /* Estilo de los mensajes de error */
+  .error-message {
+    color: red; /* Color rojo para errores */
+    margin: 10px 0; /* Margen superior e inferior */
+    font-size: 14px; /* Tamaño de fuente */
+  }
+  

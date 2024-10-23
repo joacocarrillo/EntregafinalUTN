@@ -1,0 +1,6 @@
+[
+    {  "id": 1, "name": "Buzo entrenamiento negro", "description": "Buzo elastisado color negro temporada 24/25", "price": "45.000" },
+    { "id": 2, "name": "Pantalon largo entrenamiento negro", "description": "Pantalon elastisado negro temporada 24/25", "price": "35.000" },
+  { "id": 3, "name": "Buzo entrenamiento gris", "description": "Buzo elastisado color gris temporada 24/25", "price": "45.000" },
+  { "id": 4, "name": "Pantalon largo entrenamiento gris", "description": "Pantalon elastisado gris temporada 24/25", "price": "35.000" }
+]
