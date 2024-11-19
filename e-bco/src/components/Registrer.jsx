@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { auth, db, createUserWithEmailAndPassword, setDoc, doc } from '../firebase';  // Asegúrate de que esta es la importación correcta de tus funciones de Firebase
+import { useNavigate } from 'react-router-dom';  // Importa useNavigate
 import './EstilosReg.css';
 
 const Register = () => {
@@ -6,22 +8,43 @@ const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
+  const navigate = useNavigate();
+
+ 
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
+    setError('');
+
+
     if (password !== confirmPassword) {
-      alert("Las contraseñas no coinciden");
+      setError('Las contraseñas no coinciden');
       return;
     }
-    console.log('Username:', username);
-    console.log('Email:', email);
-    console.log('Password:', password);
-  
+
+    try {
+
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+
+
+      await setDoc(doc(db, 'users', user.uid), {
+        username: username,
+        email: email,
+      });
+
+      console.log('Usuario registrado exitosamente:', user);
+
+      navigate('/');  
+    } catch (err) {
+      console.error('Error al registrarse:', err.message);
+      setError(err.message);  
+    }
   };
 
   return (
-    <div className='form-container'>
+    <div className="form-container">
       <h1>Registrarse</h1>
       <form onSubmit={handleSubmit}>
         <div>
@@ -62,9 +85,9 @@ const Register = () => {
         </div>
         <button type="submit">Registrarse</button>
       </form>
+      {error && <p className="error-message">{error}</p>}
     </div>
   );
 };
 
 export default Register;
-
